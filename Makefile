@@ -1,10 +1,12 @@
-all: HelloWorld
+CC = gcc
 
-HelloWorld: HelloWorld.o
-	$(CC) -o HelloWorld $^
+all: hello
+
+hello: hello.o
+	$(CC) -o hello $^
 
 .c.o:
-  $(CC) -c -o $@ $<
+	$(CC) -c -o $@ $<
 
 clean:
-  rm -f HelloWorld HelloWorld.o
+	rm -f hello hello.o
